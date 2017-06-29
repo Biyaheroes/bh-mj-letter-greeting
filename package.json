@@ -1,0 +1,39 @@
+{
+  "name": "bh-mj-letter-greeting",
+  "version": "0.0.0",
+  "description": "Biyaheroes MJML Letter Greeting Component",
+  "main": ".filter.js",
+  "scripts": {
+    "preinstall": "npm install babel-cli@latest gulp-cli@latest webpack@latest webpack-dev-server@latest watch@latest mjml@latest veon@latest browser-sync@latest --global",
+    "postinstall": "npm rebuild node-sass",
+    "deploy": "veon set production \"gulp clean && gulp && babel detail-list.js --out-file detail-list.support.js --source-maps && webpack --progress\"",
+    "build": "veon set development \"gulp clean && gulp && babel detail-list.js --out-file detail-list.support.js --source-maps && webpack --progress\"",
+    "test": "veon set test \"gulp && webpack --progress --env.test && mjml test-index.mjml --output test-index.html\"",
+    "watch": "gulp clean && watch \"npm run test\" ./ ./*/ --filter=./.filter.js --wait=5 --interval=5 --ignoreDotFiles",
+    "live": "gulp clean && gulp watch",
+    "server": "veon set test \"webpack-dev-server --env.test\"",
+    "proxy": "browser-sync start --port 3000 --proxy \"localhost:4000\" --index=\"test-index.html\" --files \"test-index.html\" \"test.deploy.js\"",
+    "browser": "browser-sync start --server --port 3000 --index=\"test-index.html\" --files \"test-index.html\" \"test.deploy.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Biyaheroes/bh-mj-letter-greeting.git"
+  },
+  "keywords": [
+    "biyaheroes",
+    "letter",
+    "greeting",
+    "component",
+    "bh-mj-letter-greeting"
+  ],
+  "author": "Biyaheroes Developers <developers@gmail.com>",
+  "contributors": [
+    "Robot Biyaheroes <robot@biyaheroes.com>",
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Biyaheroes/bh-mj-letter-greeting/issues"
+  },
+  "homepage": "https://github.com/Biyaheroes/bh-mj-letter-greeting#readme"
+}

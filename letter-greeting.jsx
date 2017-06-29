@@ -67,7 +67,7 @@ import Section from "mjml-section";
 import Text from "mjml-text";
 import wichevr from "wichevr";
 
-const tagName = "mj-letter-closure";
+const tagName = "mj-letter-greeting";
 
 const parentTag = ["mj-container"];
 

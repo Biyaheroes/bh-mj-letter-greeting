@@ -87,7 +87,7 @@ const defaultMJMLDefinition = {
 @MJMLElement
 class LetterGreeting extends Component {
 	render( ){
-		const { mjAttribute, width, padding } = this.props;
+		const { mjAttribute } = this.props;
 
 		let { greeting, name } = this.props;
 
@@ -101,7 +101,8 @@ class LetterGreeting extends Component {
 
 		return ( <Section
 					{ ...this.props }
-				>
+					padding="40px 0px 10px 0px"
+					>
 					<Column>
 							<Text
 								style={ {
@@ -111,8 +112,7 @@ class LetterGreeting extends Component {
 								} }
 							>
 								{ greeting } { name }
-							</Text>
-						
+							</Text>		
 					</Column>
 				</Section> );
 	}

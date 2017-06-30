@@ -102,7 +102,7 @@ class LetterGreeting extends Component {
 		return ( <Section
 					{ ...this.props }
 					padding="40px 0px 10px 0px"
-					>
+				>
 					<Column>
 							<Text
 								style={ {
@@ -111,8 +111,8 @@ class LetterGreeting extends Component {
 									"letterSpacing": "0.5px",
 								} }
 							>
-								{ greeting } { name }
-							</Text>		
+								{ greeting } { name },
+							</Text>
 					</Column>
 				</Section> );
 	}

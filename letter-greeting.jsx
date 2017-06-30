@@ -1,7 +1,7 @@
 "use strict";
 
 /*;
-  @module-license:
+	@module-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -25,80 +25,120 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-  @end-module-license
+	@end-module-license
 
-  @module-configuration:
-	{
-	  "package": "letter-greeting",
-	  "path": "letter-greeting/letter-greeting.jsx",
-	  "file": "letter-greeting.jsx",
-	  "module": "letter-greeting",
-	  "author": "Biyaheroes Developers",
-	  "contributors": [
-		"Robot Biyaheroes <robot@biyaheroes.com>",
-		"Vinse Vinalon <vinsevinalon@gmail.com>"
-	  ],
-	  "eMail": "developers@biyaheroes.com",
-	  "repository": "https://github.com/Biyaheroes/bh-mj-detail.git",
-	  "global": true
-	}
-  @end-module-configuration
+	@module-configuration:
+		{
+			"package": "letter-greeting",
+			"path": "letter-greeting/letter-greeting.jsx",
+			"file": "letter-greeting.jsx",
+			"module": "letter-greeting",
+			"author": "Biyaheroes Developers",
+			"contributors": [
+				"Robot Biyaheroes <robot@biyaheroes.com>",
+				"Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+			],
+			"eMail": "developers@biyaheroes.com",
+			"repository": "https://github.com/Biyaheroes/bh-mj-small-detail.git",
+			"global": true
+		}
+	@end-module-configuration
 
-  @module-documentation:
-	Biyaheroes MJML Letter Greeting Component
-  @end-module-documentation
+	@module-documentation:
+		Biyaheroes MJML LetterGreeting Component.
+	@end-module-documentation
 
-  @include:
-	{
-	  "MJMLElement": "mjml-core",
-	  "React": "react",
-	  "Component": "react.Component",
-	  "Column": "mjml-column",
-	  "Table": "mjml-table",
-	  "wichevr": "wichevr"
-	}
-  @end-include
+	@include:
+		{
+			"falzy": "falzy",
+			"MJMLElement": "mjml-core",
+			"React": "react",
+			"Component": "react.Component",
+			"Column": "mjml-column",
+			"Table": "mjml-table",
+			"wichevr": "wichevr"
+		}
+	@end-include
 */
 
 import { MJMLElement } from "mjml-core";
 import React, { Component } from "react";
 import Column from "mjml-column";
-import Section from "mjml-section";
-import Text from "mjml-text";
+import Table from "mjml-table";
+
+import falzy from "falzy";
 import wichevr from "wichevr";
 
-const tagName = "mj-letter-greeting";
+const tagName = "mj-small-detail";
 
-const parentTag = ["mj-container"];
+const parentTag = [ "mj-container", "mj-section" ];
 
 const endingTag = false;
 
 const defaultMJMLDefinition = {
-	"greeting": "",
-	"name": ""
+	"content": "",
+	"attributes": {
+		"padding": "10px 10px 0px 10px",
+		"width": "100%",
+		"title": "",
+		"label": "",
+		"value": ""
+	},
 };
 
 @MJMLElement
 class LetterGreeting extends Component {
-	render() {
-		const { mjAttribute } = this.props;
+	render( ){
+		const { mjAttribute, width, padding } = this.props;
 
-		return (
-			<Section 
-				{ ...this.props }
-					padding="40px 0px 10px 0px"
+		let { title, label, value } = this.props;
 
-					>
-				<Column
-					>
-					<Text
-						padding="0px 30px 0px 30px"
-						font-size="17px"
-						letter-spacing="0.5px">
-						{ wichevr( mjAttribute ( "greeting" ), mjAttribute( "name" ) ) }
-					</Text>
-				</Column>
-			</Section>);
+		title = wichevr( title, label, mjAttribute( "title" ), mjAttribute( "label" ) );
+
+		value = wichevr( value, mjAttribute( "value" ) );
+
+		if( falzy( value ) ){
+			title = "";
+		}
+
+		return ( <Column
+					{ ...this.props }
+					width={ wichevr( width, mjAttribute( "width" ) ) }
+				>
+					<Table
+						padding={ wichevr( padding, mjAttribute( "padding" ) ) }
+						table-layout="auto"
+						width="auto">
+						<tr>
+							<th
+								align="left"
+								style={ {
+									"padding": "0px 0px 0px 0px",
+									"fontSize": "10.5px",
+									"fontWeight": "500",
+									"letterSpacing": "0.3px",
+									"textTransform": "uppercase",
+									"textAlign": "left"
+								} }
+							>
+								{ title }
+							</th>
+						</tr>
+						<tr>
+							<td
+								align="left"
+								style={ {
+									"padding": "0px 0px 0px 0px",
+									"fontSize": "12px",
+									"letterSpacing": "0.3px",
+									"textAlign": "left"
+								} }
+							>
+								{ value }
+							</td>
+						</tr>
+					</Table>
+				</Column> );
 	}
 }
 

@@ -39,7 +39,7 @@
 				"Richeve S. Bebedor <richeve.bebedor@gmail.com>"
 			],
 			"eMail": "developers@biyaheroes.com",
-			"repository": "https://github.com/Biyaheroes/bh-mj-small-detail.git",
+			"repository": "https://github.com/Biyaheroes/bh-mj-letter-greeting.git",
 			"global": true
 		}
 	@end-module-configuration
@@ -64,12 +64,13 @@
 import { MJMLElement } from "mjml-core";
 import React, { Component } from "react";
 import Column from "mjml-column";
-import Table from "mjml-table";
+import Section from "mjml-section";
+import Text from "mjml-text";
 
 import falzy from "falzy";
 import wichevr from "wichevr";
 
-const tagName = "mj-small-detail";
+const tagName = "mj-letter-greeting";
 
 const parentTag = [ "mj-container", "mj-section" ];
 
@@ -78,11 +79,8 @@ const endingTag = false;
 const defaultMJMLDefinition = {
 	"content": "",
 	"attributes": {
-		"padding": "10px 10px 0px 10px",
-		"width": "100%",
-		"title": "",
-		"label": "",
-		"value": ""
+		"greeting": "",
+		"name": ""
 	},
 };
 
@@ -91,54 +89,32 @@ class LetterGreeting extends Component {
 	render( ){
 		const { mjAttribute, width, padding } = this.props;
 
-		let { title, label, value } = this.props;
+		let { greeting, name } = this.props;
 
-		title = wichevr( title, label, mjAttribute( "title" ), mjAttribute( "label" ) );
+		greeting = wichevr( greeting, mjAttribute( "greeting" ) );
 
-		value = wichevr( value, mjAttribute( "value" ) );
+		name = wichevr( name, mjAttribute( "name" ) );
 
-		if( falzy( value ) ){
-			title = "";
+		if( falzy( name ) ){
+			greeting = "";
 		}
 
-		return ( <Column
+		return ( <Section
 					{ ...this.props }
-					width={ wichevr( width, mjAttribute( "width" ) ) }
 				>
-					<Table
-						padding={ wichevr( padding, mjAttribute( "padding" ) ) }
-						table-layout="auto"
-						width="auto">
-						<tr>
-							<th
-								align="left"
+					<Column>
+							<Text
 								style={ {
-									"padding": "0px 0px 0px 0px",
-									"fontSize": "10.5px",
-									"fontWeight": "500",
-									"letterSpacing": "0.3px",
-									"textTransform": "uppercase",
-									"textAlign": "left"
+									"padding": "0px 30px 0px 30px",
+									"fontSize": "17px",
+									"letterSpacing": "0.5px",
 								} }
 							>
-								{ title }
-							</th>
-						</tr>
-						<tr>
-							<td
-								align="left"
-								style={ {
-									"padding": "0px 0px 0px 0px",
-									"fontSize": "12px",
-									"letterSpacing": "0.3px",
-									"textAlign": "left"
-								} }
-							>
-								{ value }
-							</td>
-						</tr>
-					</Table>
-				</Column> );
+								{ greeting } { name }
+							</Text>
+						
+					</Column>
+				</Section> );
 	}
 }
 

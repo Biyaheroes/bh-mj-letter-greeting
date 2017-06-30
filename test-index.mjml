@@ -1,7 +1,7 @@
 <mjml>
 	<mj-body>
 		<mj-container>
-			<mj-letter-greeting greeting="Hello" name="Vinse"/>
+			<mj-letter-greeting greeting="Hello" name="Vinse Vinalon"/>
 		</mj-container>
 	</mj-body>
 </mjml>

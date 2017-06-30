@@ -6,6 +6,7 @@ mjml \
 mjml-column \
 mjml-core \
 mjml-table \
+mjml-text \
 react \
 wichevr \
 --save && \

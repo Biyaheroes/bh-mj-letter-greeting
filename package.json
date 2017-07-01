@@ -9,7 +9,8 @@
   "scripts": {
     "deploy": "veon set production \"gulp clean && gulp && babel letter-greeting.js --out-file letter-greeting.support.js --source-maps && webpack --progress\"",
     "build": "veon set development \"gulp clean && gulp && babel letter-greeting.js --out-file letter-greeting.support.js --source-maps && webpack --progress\"",
-    "test": "veon set test \"gulp && webpack --progress --env.test && mjml test-index.mjml --output test-index.html\"",
+    "test": "veon set test \"gulp && webpack --progress --env.test && npm run render\"",
+    "render": "mjml test-index.mjml --output test-index.html",
     "watch": "gulp clean && watch \"npm run test\" ./ ./*/ --filter=./.filter.js --wait=5 --interval=5 --ignoreDotFiles",
     "live": "gulp clean && gulp watch",
     "server": "veon set test \"webpack-dev-server --env.test\"",

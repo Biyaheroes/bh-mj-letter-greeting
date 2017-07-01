@@ -29,14 +29,15 @@
 
 	@module-configuration:
 		{
-			"package": "letter-greeting",
-			"path": "letter-greeting/letter-greeting.jsx",
+			"package": "bh-mj-letter-greeting",
+			"path": "bh-mj-letter-greeting/letter-greeting.jsx",
 			"file": "letter-greeting.jsx",
 			"module": "letter-greeting",
 			"author": "Biyaheroes Developers",
 			"contributors": [
 				"Robot Biyaheroes <robot@biyaheroes.com>",
-				"Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+				"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
 			"eMail": "developers@biyaheroes.com",
 			"repository": "https://github.com/Biyaheroes/bh-mj-letter-greeting.git",
@@ -111,7 +112,7 @@ class LetterGreeting extends Component {
 									"letterSpacing": "0.5px",
 								} }
 							>
-								{ greeting } { name },
+								{ `${ greeting } ${ name },`}
 							</Text>
 					</Column>
 				</Section> );
@@ -124,3 +125,5 @@ LetterGreeting.endingTag = endingTag;
 LetterGreeting.defaultMJMLDefinition = defaultMJMLDefinition;
 
 export default LetterGreeting;
+
+

@@ -1,0 +1,5 @@
+{
+	"packages": [
+		"./letter-greeting.js" 
+	]
+}

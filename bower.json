@@ -1,0 +1,34 @@
+{
+  "name": "bh-mj-letter-greeting",
+  "version": "0.0.0",
+  "description": "Biyaheroes MJML Letter Greeting Component",
+  "main": "letter-greeting.deploy.js",
+  "support": "letter-greeting.support.js",
+  "authors": [
+    "Biyaheroes Developers <developers@gmail.com>",
+    "Robot Biyaheroes <robot@biyaheroes.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "biyaheroes",
+    "letter",
+    "greeting",
+    "component",
+    "bh-mj-letter-greeting"
+  ],
+  "homepage": "https://github.com/Biyaheroes/bh-mj-letter-greeting",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "falzy": "^0.20.0",
+    "jquery": "^3.2.1",
+    "react": "^15.6.1",
+    "wichevr": "^0.10.0"
+  }
+}

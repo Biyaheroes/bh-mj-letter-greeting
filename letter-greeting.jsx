@@ -36,8 +36,8 @@
 			"author": "Biyaheroes Developers",
 			"contributors": [
 				"Robot Biyaheroes <robot@biyaheroes.com>",
-				"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-				"Vinse Vinalon <vinsevinalon@gmail.com>"
+				"Vinse Vinalon <vinsevinalon@gmail.com>",
+				"Richeve S. Bebedor <richeve.bebedor@gmail.com>"
 			],
 			"eMail": "developers@biyaheroes.com",
 			"repository": "https://github.com/Biyaheroes/bh-mj-letter-greeting.git",
@@ -106,13 +106,11 @@ class LetterGreeting extends Component {
 				>
 					<Column>
 							<Text
-								style={ {
-									"padding": "0px 30px 0px 30px",
-									"fontSize": "17px",
-									"letterSpacing": "0.5px",
-								} }
+								paddding="0px 30px 0px 30px"
+								font-size="17px"
+								letter-spacing="0.5px"
 							>
-								{ `${ greeting } ${ name },`}
+								{ `${ greeting } ${ name },` }
 							</Text>
 					</Column>
 				</Section> );
@@ -125,5 +123,3 @@ LetterGreeting.endingTag = endingTag;
 LetterGreeting.defaultMJMLDefinition = defaultMJMLDefinition;
 
 export default LetterGreeting;
-
-

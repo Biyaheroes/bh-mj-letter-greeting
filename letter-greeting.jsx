@@ -102,11 +102,10 @@ class LetterGreeting extends Component {
 
 		return ( <Section
 					{ ...this.props }
-					padding="40px 0px 10px 0px"
 				>
 					<Column>
 							<Text
-								paddding="0px 30px 0px 30px"
+								padding="40px 30px 10px 30px"
 								font-size="17px"
 								letter-spacing="0.5px"
 							>

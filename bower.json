@@ -1,6 +1,6 @@
 {
   "name": "bh-mj-letter-greeting",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Biyaheroes MJML Letter Greeting Component",
   "main": "letter-greeting.deploy.js",
   "support": "letter-greeting.support.js",

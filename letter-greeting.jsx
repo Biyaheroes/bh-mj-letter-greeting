@@ -62,8 +62,10 @@
 	@end-include
 */
 
-import { MJMLElement } from "mjml-core";
 import React, { Component } from "react";
+
+import { MJMLElement } from "mjml-core";
+
 import Column from "mjml-column";
 import Section from "mjml-section";
 import Text from "mjml-text";
@@ -82,7 +84,7 @@ const defaultMJMLDefinition = {
 	"attributes": {
 		"greeting": "",
 		"name": ""
-	},
+	}
 };
 
 @MJMLElement
